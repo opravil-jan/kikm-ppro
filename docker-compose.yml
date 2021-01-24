@@ -5,8 +5,8 @@ services:
     container_name: semestralka-postgres
     restart: always
     environment:
-      POSTGRES_PASSWORD: identity
       POSTGRES_USER: identity
+      POSTGRES_PASSWORD: 123456
       POSTGRES_DB: identity
     ports:
       - 5432:5432
