@@ -1,0 +1,32 @@
+version: "3"
+services:
+  postgres:
+    image: postgres
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_USER: identity
+      POSTGRES_DB: identity
+    ports:
+      - 5432:5432
+  be:
+    build: ./identity-api/
+    depends_on:
+      - postgres
+    environment:
+      PORT: 3000
+      JWT_SECRET: shhhhh
+    ports:
+      - 3000:3000
+  fe:
+    build: ./identity-gui/
+    environment:
+      SERVER: be
+    depends_on:
+      - postgres
+      - be  
+    ports:
+      - 3030:3030
