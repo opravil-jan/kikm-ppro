@@ -9,7 +9,7 @@
     "audit": "audit-ci --config audit.config.json",
     "lint": "echo 'Missing linter, TBD..'",
     "start-dev": "tsc -p tsconfig.json",
-    "start": "./node_modules/.bin/ts-node ./node_modules/typeorm/cli.js schema:sync && ./node_modules/.bin/ts-node ./node_modules/typeorm/cli.js migration:run && tsc -p tsconfig.json && node build/src/index && node ./dist/src/index.js",
+    "start": "./node_modules/.bin/ts-node ./node_modules/typeorm/cli.js schema:sync && ./node_modules/.bin/ts-node ./node_modules/typeorm/cli.js migration:run && tsc -p tsconfig.json && node ./dist/src/index.js",
     "migrate": "./node_modules/.bin/typeorm migration:run"
   },
   "author": "",
