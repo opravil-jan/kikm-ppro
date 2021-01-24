@@ -3,11 +3,13 @@ FROM node:14
 WORKDIR /tmp 
 RUN git clone https://github.com/opravil-jan/kikm-ppro.git app
 
-RUN mdkir app && cp /tmp/app/identity-gui/ /usr/src/app/ && rm -fr /tmp/app
+RUN mkdir /usr/src/app && \ 
+	apt-get update && apt-get install rsync -y && \
+	rsync -rav /tmp/app/identity-gui/ /usr/src/app/ && \
+	rm -fr /tmp/app
 
 WORKDIR /usr/src/app
+RUN npm install && \
+	npm run build
 
-RUN npm install
-
-CMD [ "yarn", "dev" ]
-
+CMD [ "npm", "run", "start" ]

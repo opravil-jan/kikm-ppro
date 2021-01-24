@@ -9,7 +9,7 @@
     "audit": "audit-ci --config audit.config.json",
     "lint": "echo 'Missing linter, TBD..'",
     "start-dev": "tsc -p tsconfig.json",
-    "start:production": "node ./dist/src/index.js"
+    "start": "node ./dist/src/index.js"
   },
   "author": "",
   "license": "ISC",
