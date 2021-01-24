@@ -21,6 +21,7 @@ services:
       JWT_SECRET: shhhhh
     ports:
       - 3000:3000
+#   command: npm run migrate &&  node dist/src/index.js
   identity-gui:
     build: ./identity-gui/
     container_name: semestralka-identity-gui
