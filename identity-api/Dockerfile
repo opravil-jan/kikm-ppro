@@ -11,6 +11,8 @@ RUN mkdir /usr/src/app && \
 WORKDIR /usr/src/app
 RUN npm install && \ 
 	npm install -g typescript && \
-	tsc
+	tsc && \
+	npm run migrate
+
 
 CMD [ "node", "dist/src/index.js" ]
