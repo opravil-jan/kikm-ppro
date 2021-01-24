@@ -1,0 +1,22 @@
+.loginForm {
+  margin: auto;
+  margin-top: 30%;
+}
+
+.loginFormSpinner {
+  margin-left: 5%;
+}
+
+.errorMessage {
+  color: red;
+  margin-left: 10%;
+}
+
+.clickableCursor {
+  cursor: pointer;
+}
+
+.userForm {
+  margin: auto;
+  margin-top: 10%;
+}
