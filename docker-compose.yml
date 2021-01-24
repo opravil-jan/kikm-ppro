@@ -15,6 +15,7 @@ services:
     container_name: semestralka-identity-api
     depends_on:
       - postgres
+      - identity-gui
     environment:
       PORT: 3000
       JWT_SECRET: shhhhh
@@ -23,13 +24,13 @@ services:
   identity-gui:
     build: ./identity-gui/
     container_name: semestralka-identity-gui
-#    environment:
+    environment:
+       SERVER: http://identity-be:3000
 #      HOSTNAME: localhost
 #      PORT: 3030
 #      HOST: http://$HOSTNAME:$PORT
 #      HOST: http://localhost:3030
     depends_on:
       - postgres
-      - identity-api
     ports:
       - 3030:3000
