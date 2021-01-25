@@ -1,5 +1,5 @@
 module.exports = {
   env: {
-    SERVER: process.env.SERVER,
+    SERVER: 'http://identity-api:3030',
   },
 }
