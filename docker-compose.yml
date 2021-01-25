@@ -17,16 +17,16 @@ services:
       - postgres
       - identity-gui
     environment:
-      PORT: 3000
+      PORT: 3030
       JWT_SECRET: shhhhh
     ports:
-      - 3000:3000
+      - 3030:3000
 #   command: npm run migrate &&  node dist/src/index.js
   identity-gui:
     build: ./identity-gui/
     container_name: semestralka-identity-gui
     environment:
-       SERVER: http://identity-be:3000
+       SERVER: http://identity-be:3030
 #      HOSTNAME: localhost
 #      PORT: 3030
 #      HOST: http://$HOSTNAME:$PORT
@@ -34,4 +34,4 @@ services:
     depends_on:
       - postgres
     ports:
-      - 3030:3000
+      - 3000:3000
