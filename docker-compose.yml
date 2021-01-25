@@ -20,7 +20,7 @@ services:
       PORT: 3030
       JWT_SECRET: shhhhh
     ports:
-      - 3030:3000
+      - 3030:3030
 #   command: npm run migrate &&  node dist/src/index.js
   identity-gui:
     build: ./identity-gui/
