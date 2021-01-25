@@ -28,7 +28,6 @@ export async function getContacts(token: string) {
 }
 
 export async function deleteContact(token: string, id: string) {
-  console.log(token, id)
   await Axios.delete(`${process.env.SERVER}/v1/contact/${id}`, {
     headers: {
       Authorization: `${token}`,
